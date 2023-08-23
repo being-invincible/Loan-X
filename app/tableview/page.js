@@ -9,7 +9,6 @@ const { ColumnDef, flexRender, getCoreRowModel, useReactTable } = require('@tans
 import fdata from './data.json'
 
 // const data = useMemo(() => fdata, [])
-const data = useMemo(() => fdata, [])
 
 // Data format
 /* 
