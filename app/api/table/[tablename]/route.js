@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import Db from "../../../../lib/DBHandle";
 export async function GET(request,{params}) {
     const {tablename} = params;
-    console.log(tablename);
     let table = Db.getTable(tablename);
-   
-    return NextResponse.json(table,{status:200})
+    if(table!==undefined){
+        return NextResponse.json({message:table},{status:200})
+    }else{
+        return NextResponse.json({message:"No Data Found, Please check the Table Name."},{status:404})
+    }
 }

@@ -1,21 +1,15 @@
 "use client"
 
 import { useMemo } from 'react'
-// import {
-//     useReactTable,
-//     getCoreRowModel,
-//     flexRender
-// } from '@tanstack/react-table'
-const { flexRender, getCoreRowModel, useReactTable } = require('@tanstack/react-table');
+import {
+  useReactTable,
+  getCoreRowModel,
+  flexRender
+} from '@tanstack/react-table'
+// const { flexRender, getCoreRowModel, useReactTable } = require('@tanstack/react-table');
 
 import fdata from './data.json'
 
-<<<<<<< Updated upstream
-=======
-const data = useMemo(() => fdata, [])
->>>>>>> Stashed changes
-
-// Data format
 /* 
 {
       "number": 1,
@@ -36,16 +30,12 @@ const page = () => {
 
   const data = useMemo(() => fdata, [])
 
+  /**@type import('@tanstack/react-table').ColumnDef<any> */
   const columns = [
     {
-        header: 'ID',
-        accesorKey: 'number',
-        footer: 'ID',
-    },
-    {
-      header: 'Customer',
-      accesorKey: 'customer',
-      footer: 'Customer',
+      header: 'ID',
+      accesorKey: 'number',
+      footer: 'ID',
     },
     {
       header: 'User',
@@ -53,9 +43,20 @@ const page = () => {
       footer: 'User',
     },
     {
+      header: 'Customer',
+      accesorKey: 'customer',
+      footer: 'Customer',
+    },
+
+    {
       header: 'Loan',
       accesorKey: 'loan',
       footer: 'Loan',
+    },
+    {
+      header: 'EMI',
+      accesorKey: 'emi',
+      footer: 'EMI',
     },
     {
       header: 'Amount',
@@ -67,30 +68,41 @@ const page = () => {
       accesorKey: 'type',
       footer: 'Type',
     },
+    {
+      header: 'Updated',
+      accesorKey: 'updated',
+      footer: 'Updated',
+    },
+    {
+      header: 'Lastupdated',
+      accesorKey: 'lastupdated',
+      footer: 'Lastupdated',
+    },
   ]
 
-  const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
+  const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel(), })
 
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-between p-10'>
+      
       <table>
         <thead>
-        {table.getHeaderGroups().map(headerGroup => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map(header => (
-              <th key={header.id}>
-                {flexRender(
-                  header.column.columnDef.header, header.getContext()
-                )}
-              </th>
-            ))}
-          </tr>
-        ))}
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th key={header.id}>
+                  {flexRender(
+                    header.column.columnDef.header, header.getContext()
+                  )}
+                </th>
+              ))}
+            </tr>
+          ))}
         </thead>
         
         <tbody>
-          {table.getRowModel().rows.map(row =>(
+          {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
@@ -99,7 +111,7 @@ const page = () => {
               ))}
             </tr>
           ))}
-          
+
         </tbody>
 
         <tfoot>

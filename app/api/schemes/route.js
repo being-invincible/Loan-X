@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Db from "../../../lib/DBHandle";
-var table = "customers"
+var table = "schemes"
 
 export async function PUT(request){
     const { number, fields } = await request.json();
@@ -15,4 +15,9 @@ export async function PUT(request){
         return NextResponse.json({message:"No record Found..."},{status:404});
     }
 }
+
+export async function POST(request){
+    const { number, fields } = await request.json();
+}
+
 

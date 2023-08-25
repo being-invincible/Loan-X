@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import Db from "../../../lib/DBHandle"
 import Module from "../../../lib/models/model";
 const table = "fundDetails";
@@ -19,14 +19,14 @@ export async function GET(request){
         }
     }
     // export the output as json format
-    return NextResponse.json(Db.getTable(table)[month],{status:203});
+    return NextResponse.json({message:Db.getTable(table)[month]},{status:200});
 }   
 
 export async function PUT(request){
     records = Db.getTable(table);
      const { totalFund,type } = await request.json();
 
-    let statement = statements
+    let statement = Module.statements
     let record = records[month]
     // check for the in or out of the money and create the record
     if(type === "credit"){
@@ -41,5 +41,5 @@ export async function PUT(request){
     statement.user = "true";
     Db.insert("statements",statement);
 
-return NextResponse.json("ok");
+    return NextResponse.json({message:"fund updated and statement created"},{status:201});
 }
