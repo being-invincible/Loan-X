@@ -10,6 +10,10 @@ const { flexRender, getCoreRowModel, useReactTable } = require('@tanstack/react-
 
 import fdata from './data.json'
 
+<<<<<<< Updated upstream
+=======
+const data = useMemo(() => fdata, [])
+>>>>>>> Stashed changes
 
 // Data format
 /* 

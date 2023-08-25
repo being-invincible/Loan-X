@@ -1,0 +1,77 @@
+{
+    "fundDetails": {
+        "0": {
+            "number": 1
+        },
+        "7": {
+            "number": 7,
+            "totalFund": 1000,
+            "interest": 0,
+            "principle": 0,
+            "updated": "2023-08-08T09:53:35.372Z",
+            "lastupdated": "2023-08-08T09:49:33.085Z"
+        }
+    },
+    "statements": {
+        "0": {
+            "number": 5
+        },
+        "1": {
+            "fundDetails": 7,
+            "number": 1,
+            "user": "true",
+            "customer": "N/A",
+            "loan": "N/A",
+            "emi": "N/A",
+            "amount": 1000,
+            "type": "credit",
+            "updated": "2023-08-07T15:35:02.184Z",
+            "lastupdated": "N/A"
+        },
+        "2": {
+            "number": 2,
+            "user": "true",
+            "customer": "N/A",
+            "loan": "N/A",
+            "emi": "N/A",
+            "amount": 20000,
+            "type": "credit",
+            "updated": "2023-08-07T16:07:33.185Z",
+            "lastupdated": "N/A"
+        },
+        "3": {
+            "number": 3,
+            "user": "true",
+            "customer": "N/A",
+            "loan": "N/A",
+            "emi": "N/A",
+            "amount": 10000,
+            "type": "debit",
+            "updated": "2023-08-07T16:07:53.727Z",
+            "lastupdated": "N/A"
+        },
+        "4": {
+            "number": 4,
+            "user": "true",
+            "customer": "N/A",
+            "loan": "N/A",
+            "emi": "N/A",
+            "amount": 5000,
+            "type": "debit",
+            "updated": "2023-08-08T09:49:33.086Z",
+            "lastupdated": "N/A"
+        },
+        "5": {
+            "number": 5,
+            "user": "true",
+            "customer": "N/A",
+            "loan": "N/A",
+            "emi": "N/A",
+            "amount": 5000,
+            "type": "debit",
+            "updated": "2023-08-08T09:53:35.375Z",
+            "lastupdated": "N/A"
+        }
+    }
+    
+}
