@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Db from "../../../lib/DBHandle";
+import Model from "../../../lib/models/model";
 var table = "customers"
 
 export async function PUT(request){
@@ -16,3 +17,12 @@ export async function PUT(request){
     }
 }
 
+export async function POST(request){
+    const { fields } = await request.json();
+    let newCustomer = Model.customer;
+    Object.keys(fields).forEach(key => {
+        newCustomer[key]= fields[key];
+    })
+    Db.insert(table,newCustomer)
+    return NextResponse.json({message:"New Record Added Successfully..."},{status:201});
+}

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import Db from "../../../lib/DBHandle";
 import Model from "../../../lib/models/model";
-var table = "schemes"
+var table = "loans"
 
 export async function PUT(request){
     const { number, fields } = await request.json();
@@ -19,11 +19,10 @@ export async function PUT(request){
 
 export async function POST(request){
     const { fields } = await request.json();
-    let newScheme = Model.schemes;
+    let newCustomer = Model.customer;
     Object.keys(fields).forEach(key => {
-        newScheme[key]= fields[key];
+        newCustomer[key]= fields[key];
     })
-    Db.insert(table,newScheme)
+    Db.insert(table,newCustomer)
     return NextResponse.json({message:"New Record Added Successfully..."},{status:201});
 }
-
